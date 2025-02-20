@@ -15,7 +15,7 @@ This API automates and standardizes invoice conversion, replacing the manual, ti
 
 ## Technical Approach
 
-The project prioritized effective teamwork and task allocation, ensuring workload was distributed evenly and team members worked in their areas of expertise. Progress was tracked and communicated regularly.  The API utilizes a PostgreSQL database for data persistence and is deployed on AWS Lightsail.
+The project prioritized effective teamwork and task allocation, ensuring workload was distributed evenly and team members worked in their areas of expertise. Progress was tracked and communicated regularly.  The API utilizes a PostgreSQL database for data persistence, is built using the Flask framework, and is deployed on AWS Lightsail.
 
 **Note:** The current deployment of this project is under maintenance.
 
