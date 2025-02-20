@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #3d3d3d;
+    margin: 0;
+    padding: 20px;
+    position: relative; /* Add relative positioning to allow absolute positioning */
+}
+h1 {
+    color: #e3d9d9;
+    text-align: center;
+}
+.content {
+    margin-top: 50px; /* Adjust the margin-top as needed */
+}
+h2 {
+    color: #040404;
+}
+p {
+    color: #999;
+    margin-bottom: 5px;
+}
+input[type="text"] {
+    padding: 15.5px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    width: 20%;
+    background-color: #f4efef;
+    color: #000000;
+}
+button {
+    color: #fff;
+    background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: transparent;
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    color: #868bd4;
+}
+
+button:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+span {
+    margin-left: 10px;
+    color: #ccc;
+}
+.back-button {
+    position: absolute;
+    top: 80px; /* Adjust the top position here */
+    left: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+.back-button:hover {
+    background-color: #555;
+}

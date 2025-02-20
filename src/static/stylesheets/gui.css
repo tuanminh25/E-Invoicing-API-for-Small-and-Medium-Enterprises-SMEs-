@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #3d3d3d;
+    margin: 0;
+    padding: 20px;
+    position: relative; /* Add relative positioning to allow absolute positioning */
+}
+h1 {
+    color: #e3d9d9;
+    text-align: center;
+}
+.content {
+    margin-top: 50px; /* Adjust the margin-top as needed */
+}
+h2 {
+    color: #040404;
+}
+p {
+    color: #999;
+    margin-bottom: 5px;
+}
+input[type="text"] {
+    padding: 15.5px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    width: 20%;
+    background-color: #f4efef;
+    color: #0a0a0a;
+}
+button {
+    color: #fff;
+    background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: transparent;
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    color: #868bd4;
+}
+
+button:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+span {
+    margin-left: 10px;
+    color: #ccc;
+}
+.back-button {
+    position: absolute;
+    top: 80px; /* Adjust the top position here */
+    left: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+.back-button:hover {
+    background-color: #555;
+}
+
+.data-style {
+    padding: 8px; /* Add padding to the input field */
+    border: 1px solid #1e1818; /* Set a light gray border */
+    border-radius: 4px; /* Round the corners */
+    font-size: 1rem; /* Set the font size */
+    width: 22%; /* Set the input width to 100% of the container */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    margin-bottom: 10px; /* Add a bottom margin for spacing */
+    background-color: #eeebeb;
+    height: 40px;
+}
+
+.js-number-of-items-input,
+.js-number-of-items-submission {
+    display: inline-block; /* Makes both elements inline-block */
+    margin-right: 10px; /* Adds a margin to separate the input and paragraph */
+    vertical-align: middle; /* Aligns both elements vertically in the middle */
+}
+
+.js-number-of-items-submission {
+    font-weight: bold; /* Makes the text bold */
+    color: rgb(170, 0, 255); /* Sets the text color to red */
+    font-size: 1.2rem; /* Adjust the text size as needed */
+    padding: 5px; /* Optional: Adds padding around the text */
+    margin-top: -5px; /* Adjust the offset as needed */
+}
+
+input[type="submit"] {
+    background-color: #007BFF; /* Set the background color */
+    color: white; /* Set the text color */
+    font-size: 16px; /* Set the font size */
+    padding: 10px 15px; /* Add padding to the button */
+    border: none; /* Remove the default border */
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darken the background color on hover */
+}

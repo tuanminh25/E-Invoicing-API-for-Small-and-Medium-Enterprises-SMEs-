@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>GUI Generator</title>
+</head>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/main.css') }}" />
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/footer.css') }}">
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/nav.css') }}">
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/gui.css') }}">
+
+<nav>
+    <ul class="navbar">
+        <li class="navlogo"><h1 class="gradient-text-animation"> FIVE GUYS </h1></li>
+        <li class="navbarli" onclick="window.location.href = '/logout';" ><h4 class="gradient-text-animation"> Logout </h4></li >
+        <li class="navbarli" onclick="window.location.href = '/';"><h4 class="gradient-text-animation"> Dashboard </h4></li>
+        <li class="navbarli" onclick="window.location.href = '/invoice/GUI';"><h4 class="gradient-text-animation"> Upload GUI </h4></li>
+        <li class="navbarli" onclick="window.location.href = '/invoice/CSV';"><h4 class="gradient-text-animation"> Upload CSV </h4></li>
+        <li class="navbarli" onclick="window.location.href = '/invoice/JSON';"><h4 class="gradient-text-animation"> Upload JSON </h4></li>
+        <li class="navbarli" onclick="window.location.href = '/invoice';"><h4 class="gradient-text-animation"> Update </h4></li>
+    </ul>
+</nav>
+<body>
+
+    <form action="/invoice/GUI" method="post">
+        <h2>Invoice Details</h2>
+
+        <p for="IssueDate">Issue Date</p>
+        <input class="data-style" type="date" id="IssueDate" name="IssueDate" required>
+        <br> <br>
+        <p for="DueDate">Due Date</p>
+        <input class="data-style" type="date" id="DueDate" name="DueDate" required>
+        <br> <br>
+        <p for="InvoiceTypeCode">Invoice Type Code</p>
+        <input type="Text" id="InvoiceTypeCode" name="InvoiceTypeCode" placeholder="380" required>
+        <br> <br>
+        <p for="DocumentCurrencyCode">Document Currency Code</p>
+        <input type="Text" id="DocumentCurrencyCode" name="DocumentCurrencyCode" placeholder="AUD" required>       
+
+        <h2>Supplier Party Details</h2>
+
+        <p for="SupplierID">SupplierID</p>
+        <input type="text" id="SupplierID" name="SupplierID" placeholder="51824753556" required>
+        <br> <br>
+        <p for="SupplierEndpointID">SupplierEndpointID Name</p>
+        <input type="text" id="SupplierEndpointID" name="SupplierEndpointID" placeholder="51824753556" required>
+        <br> <br>
+        <p for="SupplierName">SupplierName</p>
+        <input type="text" id="SupplierName" name="SupplierName" placeholder="ABC Company" required>
+        
+        <h3> Supplier Personal Information</h3>
+
+        <p for="SupplierCompany">Company</p>
+        <input type="text" id="SupplierCompany" name="SupplierCompany" placeholder="ABC Inc.">
+        <br> <br>
+        <p for="SupplierTelephone">Telephone</p>
+        <input type="text" id="SupplierTelephone" name="SupplierTelephone" placeholder="123456789">
+        <br> <br>
+        <p for="SupplierElectronicMail">Email</p>
+        <input type="text" id="SupplierElectronicMail" name="SupplierElectronicMail" placeholder="seller@example.com">
+        
+        <h3> Supplier Address </h3>
+        
+        <p for="SupplierStreetName">Street Name</p>
+        <input type="text" id="SupplierStreetName" name="SupplierStreetName" placeholder="123 Main Street">
+        <br> <br>
+        <p for="SupplierAdditionalStreetName">Additional Street Name</p>
+        <input type="text" id="SupplierAdditionalStreetName" name="SupplierAdditionalStreetName" placeholder="Unit 7">
+        <br> <br>
+        <p for="SupplierCityName">City</p>
+        <input type="text" id="SupplierCityName" name="SupplierCityName" placeholder="Sydney">
+        <br> <br>
+        <p for="SupplierPostalZone">Postal</p>
+        <input type="text" id="SupplierPostalZone" name="SupplierPostalZone" placeholder="12345">
+        <br> <br>
+        <p for="SupplierCountrySubentity">CountrySubentity</p>
+        <input type="text" id="SupplierCountrySubentity" name="SupplierCountrySubentity" placeholder="Region A">
+        <br> <br>
+        <p for="SupplierCountryCode">Country Code</p>
+        <input type="text" id="SupplierCountryCode" name="SupplierCountryCode" placeholder="AU">
+
+
+        <h2>Payee Party Details</h2>     
+    
+        <p for="PayeeID">PayeeID</p>
+        <input type="text" id="PayeeID" name="PayeeID" placeholder="51824753556" required>
+        <br> <br>
+        <p for="PayeeEndpointID">PayeeEndpointID Name</p>
+        <input type="text" id="PayeeEndpointID" name="PayeeEndpointID" placeholder="51824753556" required>
+        <br> <br>
+        <p for="PayeeName">PayeeName</p>
+        <input type="text" id="PayeeName" name="PayeeName" placeholder="ABC Company" required>
+
+        <h3> Payee Personal Information</h3>
+
+        <p for="PayeeCompany">Company</p>
+        <input type="text" id="PayeeCompany" name="PayeeCompany" placeholder="ABC Inc.">
+        <br> <br>
+        <p for="PayeeTelephone">Telephone</p>
+        <input type="text" id="PayeeTelephone" name="PayeeTelephone" placeholder="123456789">
+        <br> <br>
+        <p for="PayeeElectronicMail">Email</p>
+        <input type="text" id="PayeeElectronicMail" name="PayeeElectronicMail" placeholder="payee@example.com">
+        
+        <h3> Payee Address </h3>
+        
+        <p for="PayeeStreetName">Street Name</p>
+        <input type="text" id="PayeeStreetName" name="PayeeStreetName" placeholder="123 Main Street">
+        <br> <br>
+        <p for="PayeeAdditionalStreetName">Additional Street Name</p>
+        <input type="text" id="PayeeAdditionalStreetName" name="PayeeAdditionalStreetName" placeholder="Unit 7">
+        <br> <br>
+        <p for="PayeeCityName">City</p>
+        <input type="text" id="PayeeCityName" name="PayeeCityName" placeholder="Sydney">
+        <br> <br>
+        <p for="PayeePostalZone">Postal</p>
+        <input type="text" id="PayeePostalZone" name="PayeePostalZone" placeholder="67890">
+        <br> <br>
+        <p for="PayeeCountrySubentity">CountrySubentity</p>
+        <input type="text" id="PayeeCountrySubentity" name="PayeeCountrySubentity" placeholder="Region B">
+        <br> <br>
+        <p for="PayeeCountryCode">Country Code</p>
+        <input type="text" id="PayeeCountryCode" name="PayeeCountryCode" placeholder="AU">
+    
+        <h2>Payment Information</h2>    
+    
+        <p for="LineExtensionAmount">Line Extension Amount</p>
+        <input type="text" id="LineExtensionAmount" name="LineExtensionAmount" placeholder="0" required>
+        <br> <br>
+        <p for="TaxAmount">Tax Amount</p>
+        <input type="text" id="TaxAmount" name="TaxAmount" placeholder="0" required>
+        <br> <br>
+        <p for="TaxableAmount">Taxable Amount</p>
+        <input type="text" id="TaxableAmount" name="TaxableAmount" placeholder="0" required>
+        <br> <br>
+        <p for="TaxCategoryId">Tax Category ID</p>
+        <input type="text" id="TaxCategoryId" name="TaxCategoryId" placeholder="S" required>
+        <br> <br>
+        <p for="TaxPercent">Tax Percent</p>
+        <input type="text" id="TaxPercent" name="TaxPercent" placeholder="0" required>
+        <br> <br>
+        <p for="TaxSchemeID">Tax Scheme ID</p>
+        <input type="text" id="TaxSchemeID" name="TaxSchemeID" placeholder="GST" required>
+        <br> <br>
+        <p for="TaxExclusiveAmount">Tax Exclusive Amount</p>
+        <input type="text" id="TaxExclusiveAmount" name="TaxExclusiveAmount" placeholder="0" required>
+        <br> <br>
+        <p for="TaxInclusiveAmount">Tax Inclusive Amount</p>
+        <input type="text" id="TaxInclusiveAmount" name="TaxInclusiveAmount" placeholder="0" required>
+        <br> <br>
+        <p for="PayableRoundingAmount">Payable Rounding Amount</p>
+        <input type="text" id="PayableRoundingAmount" name="PayableRoundingAmount" placeholder="0" required>
+        <br> <br>
+        <p for="PayableAmount">Payable Amount</p>
+        <input type="text" id="PayableAmount" name="PayableAmount" placeholder="0" required>
+    
+        <h2>Invoice Line Items</h2>    
+
+            <p for="numberOfItems">Number of Items<span class="blueastrc">*</span></p>
+            <input class="js-number-of-items-input" type="text" id="numberOfItems" name="numberOfItems" placeholder="0" required>
+            <p class="js-number-of-items-submission">Confirm amount of items</p>
+
+            <div class="js-item-div">
+                
+            </div>
+        <br><br>
+        <input type="submit" value="Submit Invoice">
+    </form>
+
+    {% if invoiceID %}
+        <p>Invoice ID: {{ invoiceID }}</p>
+    {% endif %}
+
+    <!-- Footer -->
+<br> <br> <br>
+<footer class="w3-center w3-padding-64 w3-opacity w3-hover-opacity-off lightBlueOnHover">
+    <a href="#header" class="w3-button"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+
+<script>
+document.querySelector('.js-number-of-items-submission').addEventListener('click', () => {
+    let numOfLinesInput = document.querySelector('.js-number-of-items-input');
+    let numOfLines = parseInt(numOfLinesInput.value, 10); 
+    let itemsDiv = document.querySelector('.js-item-div');
+    itemsDiv.innerHTML = ''; 
+
+    for (let i = 0; i < numOfLines; i++) {
+        itemsDiv.innerHTML += `
+            <div class="item">
+                <h2>Product ${1+i}</h2>
+                <p for="ItemName${i}">Item Name</p>
+                <input type="text" id="ItemName${i}" name="ItemName${i}" placeholder="Name" required>
+                <br> <br>
+                <p for="InvoicedQuantity${i}">Item Quantity</p>
+                <input type="text" id="InvoicedQuantity${i}" name="InvoicedQuantity${i}" placeholder="0">            
+                <br> <br>
+                <p for="TaxAmount${i}">Tax Amount</p>
+                <input type="text" id="TaxAmount${i}" name="TaxAmount${i}" placeholder="0">
+                <br> <br>
+                <p for="TaxSchemeID${i}">Tax SchemeID</p>
+                <input type="text" id="TaxSchemeID${i}" name="TaxSchemeID${i}" placeholder="GST" required>
+                <br> <br>
+                <p for="ClassifiedTaxCategoryId${i}">Classified Tax CategoryId</p>
+                <input type="text" id="ClassifiedTaxCategoryId${i}" name="ClassifiedTaxCategoryId${i}" placeholder="S" required>
+                <br> <br>
+                <p for="PriceAmount${i}">Price Amount</p>
+                <input type="text" id="PriceAmount${i}" name="PriceAmount${i}" placeholder="0">
+                <br> <br>
+                <p for="LineExtensionAmount${i}">Line Extension Amount</p>
+                <input type="text" id="LineExtensionAmount${i}" name="LineExtensionAmount${i}" placeholder="0">
+            </div>
+        `;
+    }
+});
+</script>
+</html>
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Welcome to our cutting-edge eInvoicing 
+                    platform, where efficiency meets simplicity. Streamlining your invoicing
+                    process has never been easier. Say goodbye to paperwork and hello to 
+                    seamless transactions with our intuitive interface. Experience the 
+                    convenience of digitized invoicing and take control of your financial 
+                    transactions effortlessly. Join us on the forefront of digital finance 
+                    and unlock a world of efficiency today.</p>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/invoice/CSV"> Upload CSV </a></li>
+                    <br>
+                    <li><a href="/invoice/JSON"> Upload JSON </a></li>
+                    <br>
+                    <li><a href="/invoice/GUI"> Upload GUI </a></li>
+                    <br>
+                    <li><a href="/"> Main menu </a></li>
+                    <br>
+                    <li><a href="/logout"> Logout </a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright © 2023 All Rights Reserved by 
+                    <a href="#">Fiveguys</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

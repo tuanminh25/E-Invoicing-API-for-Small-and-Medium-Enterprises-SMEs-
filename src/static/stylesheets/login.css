@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+    .highlight-bg {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+        background: inherit;
+        border-radius: 12px;
+        background: linear-gradient(-90deg, #007cf0, #00dfd8, #ff0080, #007cf0);
+        background-size: 400% 100%;
+        border: none;
+        padding: 0;
+        margin: 0;
+        animation: background-anim 8s ease-in-out infinite;
+    }
+
+    body {
+    background: rgb(255, 255, 255);
+    font-family: "Inter", sans-serif;
+    margin-top: 5vh;
+    }
+
+    .login {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+    }
+
+    .login-header,
+    .login p {
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+
+    .login-triangle {
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: #D42F4A; 
+    }
+
+    .login-header {
+    background: linear-gradient(-180deg,#D42F4A,#D42F4A,#ff0080, #ff0080);
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    }
+
+    .login-container {
+    background: #ebebeb;
+    padding: 12px;
+    }
+
+    .login p {
+    padding: 12px;
+    }
+
+    .login input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+    }
+
+    .login input[type="email"],
+    .login input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+    }
+
+    .login input[type="email"]:focus,
+    .login input[type="password"]:focus {
+    border-color: #888;
+    }
+
+    .login input[type="submit"] {
+    background: linear-gradient(-180deg, #D42F4A, #ff0080);
+    animation: 8s ease-in-out infinite;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    }
+
+    .login input[type="submit"]:hover {
+    background: rgb(0, 0, 0)09A;
+    }
+
+    .login input[type="submit"]:focus {
+    border-color: #000000;
+    }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/main.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/footer.css') }}">
+    <title>XML Viewer</title>
+    <style>
+        .centered-div {
+            text-align: center;
+            margin-top: 20px; /* Adjust this value as needed */
+        }
+        .json-container {
+            display: inline-block;
+            box-shadow: 0 0 0 1px transparent, 0 2px 4px transparent, 0 12px 24px transparent;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <button type="submit" class="mt-3" onclick="window.location.href = '/invoice';">
+        <span>
+            <span class="highlight-bg"></span>
+            <span class="button-text">
+                Back
+            </span>
+        </span>
+    </button>
+    <pre><div class="centered-div"><div class="json-container">{{ xml_data | safe }}</div></div></pre>
+
+</body>
+</body>
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Welcome to our cutting-edge eInvoicing 
+                    platform, where efficiency meets simplicity. Streamlining your invoicing
+                    process has never been easier. Say goodbye to paperwork and hello to 
+                    seamless transactions with our intuitive interface. Experience the 
+                    convenience of digitized invoicing and take control of your financial 
+                    transactions effortlessly. Join us on the forefront of digital finance 
+                    and unlock a world of efficiency today.</p>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/invoice/{{ invoice_id }}">View invoice</a></li>
+                    <br>
+                    <li><a href="/invoice/CSV"> Upload CSV </a></li>
+                    <br>
+                    <li><a href="/invoice/JSON"> Upload JSON </a></li>
+                    <br>
+                    <li><a href="/invoice/GUI"> Upload GUI </a></li>
+                    <br>
+                    <li><a href="/"> Main menu </a></li>
+                    <br>
+                    <li><a href="/logout"> Logout </a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright © 2023 All Rights Reserved by 
+                    <a href="#">Fiveguys</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
+

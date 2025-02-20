@@ -1,0 +1,53 @@
+{
+    "invoiceinfo": {
+        "IssueDate": "DD/MM/YYYY",
+        "DueDate": "DD/MM/YYYY",
+        "InvoiceTypeCode": 71,
+        "DocumentCurrencyCode": "AUD",
+        "SupplierID": 0,
+        "SupplierEndpointID": 0,
+        "SupplierName": null,
+        "SupplierStreetName": null,
+        "SupplierAdditionalStreetName": null,
+        "SupplierCityName": null,
+        "SupplierPostalZone": 0,
+        "SupplierCountrySubentity": null,
+        "SupplierCountryCode": "AU",
+        "SupplierElectronicMail": null,
+        "SupplierTelephone": null,
+        "SupplierCompany": null,
+        "PayeeID": 1,
+        "PayeeEndpointID": 0,
+        "PayeeName": null,
+        "PayeeStreetName": null,
+        "PayeeAdditionalStreetName": null,
+        "PayeeCityName": null,
+        "PayeePostalZone": 0,
+        "PayeeCountrySubentity": null,
+        "PayeeCountryCode": "AU",
+        "PayeeElectronicMail": null,
+        "PayeeTelephone": null,
+        "PayeeCompany": null,
+        "LineExtensionAmount": 0,
+        "TaxAmount": 0,
+        "TaxableAmount": 0,
+        "TaxCategoryId": "S",
+        "TaxPercent": 0,
+        "TaxSchemeID": "GST",
+        "TaxExclusiveAmount": 0,
+        "TaxInclusiveAmount": 0,
+        "PayableRoundingAmount": 0,
+        "PayableAmount": 0
+    },
+    "products": [
+        {
+            "ItemName": null,
+            "InvoicedQuantity": 0,
+            "TaxAmount": 0,
+            "TaxSchemeID": "GST",
+            "ClassifiedTaxCategoryId": "S",
+            "PriceAmount": 0,
+            "LineExtensionAmount": 0
+        }
+    ]
+}

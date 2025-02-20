@@ -1,0 +1,97 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/showall.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/nav.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/footer.css') }}">
+    <title>All Invoices</title>
+</head>
+
+<nav>
+    <ul class="navbar">
+        <li class="navlogo"><h1 class="gradient-text-animation"> FIVE GUYS </h1></li>
+        <li class="navbarli" onclick="window.location.href = '/logout';" ><h4 class="gradient-text-animation"> Logout </h4></li >
+        <li class="navbarli" onclick="window.location.href = '/';"><h4 class="gradient-text-animation"> Dashboard </h4></li>
+        <li class="navbarli" onclick="window.location.href = '/invoice/GUI';"><h4 class="gradient-text-animation"> Upload GUI </h4></li>
+        <li class="navbarli" onclick="window.location.href = '/invoice/CSV';"><h4 class="gradient-text-animation"> Upload CSV </h4></li>
+        <li class="navbarli" onclick="window.location.href = '/invoice/JSON';"><h4 class="gradient-text-animation"> Upload JSON </h4></li>
+        <li class="navbarli" onclick="window.location.href = '/invoice';"><h4 class="gradient-text-animation"> Update </h4></li>
+    </ul>
+</nav>
+
+
+
+<body>
+    <h1>Your Invoices </h1>
+    <ul class="menu">
+        {% for id in invoice_ids %}
+        <li class="item f1">
+            <a href="#" target="_self">Invoice id: {{ id }}</a>
+            <ul>
+            <li> <a href="/invoice/{{ id }}" target="_self">View</a></li>
+            <li> <a href="/invoice/{{ id }}/html" target="_self">View HTML Render</a></li>
+            <li> <a href="/invoice/{{ id }}/json" target="_self">View JSON Render</a></li>
+            <li> <a href="/update/invoice/{{ id }}" target="_self">Update</a></li>
+            <li> <a href="/invoice/{{ id }}/download" target="_self">Download</a></li>
+            <li> <a href="/invoice/{{ id }}/validate" target="_self">Validation Report</a></li>
+            <li> <a href="/clear/invoice/{{ id }}" target="_self">Delete</a></li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script>
+        if(!window.location.hash.includes("#reloaded")) {
+            window.location.href += "#reloaded";
+            window.location.reload()
+        }
+
+        function openNewTab(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Welcome to our cutting-edge eInvoicing 
+                    platform, where efficiency meets simplicity. Streamlining your invoicing
+                    process has never been easier. Say goodbye to paperwork and hello to 
+                    seamless transactions with our intuitive interface. Experience the 
+                    convenience of digitized invoicing and take control of your financial 
+                    transactions effortlessly. Join us on the forefront of digital finance 
+                    and unlock a world of efficiency today.</p>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/invoice/CSV"> Upload CSV </a></li>
+                    <br>
+                    <li><a href="/invoice/JSON"> Upload JSON </a></li>
+                    <br>
+                    <li><a href="/invoice/GUI"> Upload GUI </a></li>
+                    <br>
+                    <li><a href="/"> Main menu </a></li>
+                    <br>
+                    <li><a href="/logout"> Logout </a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright © 2023 All Rights Reserved by 
+                    <a href="#">Fiveguys</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

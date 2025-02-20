@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+    <title>Invoice - INVOICENAME</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style href="invoice.css"></style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <div id = "app">
+    <span style = "display:flex">
+      <span id ="to" class = "col p-3">
+          <h2>TO:</h2>
+          <h3 v-if="invoice.AccountingCustomerParty.PartyName">{{invoice.AccountingCustomerParty.PartyName}}</h3>
+          <h3>
+            <span v-if="invoice.AccountingSupplierParty.StreetName">{{invoice.AccountingCustomerParty.StreetName}}</span>
+            <span v-if="invoice.AccountingCustomerParty.AdditionalStreetName">{{invoice.AccountingCustomerParty.AdditionalStreetName}}</span>
+            <span v-if="invoice.AccountingCustomerParty.BuildingNumber">{{invoice.AccountingCustomerParty.BuildingNumber}}</span>
+          </h3>
+          <h3>
+            <span v-if="invoice.AccountingCustomerParty.CityName">{{invoice.AccountingCustomerParty.CityName}}</span>
+            <span v-if="invoice.AccountingCustomerParty.Country">{{invoice.AccountingCustomerParty.Country}}</span>
+          </h3><br v-if="invoice.AccountingCustomerParty.Telephone||invoice.AccountingCustomerParty.ElectronicMail">
+          <h3 v-if="invoice.AccountingCustomerParty.Telephone">Phone: {{invoice.AccountingCustomerParty.Telephone}}</h3>
+          <h3 v-if="invoice.AccountingCustomerParty.ElectronicMail">Mail: {{invoice.AccountingCustomerParty.ElectronicMail}}</h3>
+      </span>
+      <span id ="from" class = "col p-3 text-end">
+          <h2>FROM:</h2>
+          <h3 v-if="invoice.AccountingSupplierParty.PartyName">{{invoice.AccountingSupplierParty.PartyName}}</h3>
+          <h3>
+            <span v-if="invoice.AccountingSupplierParty.StreetName">{{invoice.AccountingSupplierParty.StreetName}}</span>
+            <span v-if="invoice.AccountingSupplierParty.AdditionalStreetName">{{invoice.AccountingSupplierParty.AdditionalStreetName}}</span>
+            <span v-if="invoice.AccountingSupplierParty.BuildingNumber">{{invoice.AccountingSupplierParty.BuildingNumber}}</span>
+          </h3>
+          <h3>
+            <span v-if="invoice.AccountingSupplierParty.CityName">{{invoice.AccountingSupplierParty.CityName}}</span>
+            <span v-if="invoice.AccountingSupplierParty.Country">{{invoice.AccountingSupplierParty.Country}}</span>
+          </h3><br v-if="invoice.AccountingSupplierParty.Telephone||invoice.AccountingSupplierParty.ElectronicMail">
+          <h3 v-if="invoice.AccountingSupplierParty.Telephone">Phone: {{invoice.AccountingSupplierParty.Telephone}}</h3>
+          <h3 v-if="invoice.AccountingSupplierParty.ElectronicMail">Mail: {{invoice.AccountingSupplierParty.ElectronicMail}}</h3>
+      </span>
+    </span>
+    <span style = "display:flex">
+      <span class = "col-sm mb-3 mb-sm-0">
+        <b id = "invoice-date"  class="card card-body" role="alert">
+          INVOICE DATE: {{invoice.IssueDate}}</b>
+      </span>
+      <span class = "col-sm ">
+        <b class="card card-body" >
+          INVOICE ID: {{invoice.ID}}
+        </b>
+      </span>
+      <span class = "col-sm " v-if="invoice.DocumentCurrencyCode">
+        <b class="card card-body" >
+          INVOICE CURRENCY: {{invoice.DocumentCurrencyCode}}
+        </b>
+      </span>
+    </span>
+    <table class = "table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" v-if="itemPropExists('Name')">Name</th>
+          <th scope="col" v-if="itemPropExists('Description')">Description</th>
+          <th scope="col" v-if="propExists('PriceAmount')">Price</th>
+          <th scope="col" v-if="propExists('InvoicedQuantity')">Quantity</th>
+          <th scope="col" v-if="propExists('TaxAmount')">Tax (inc in price)</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for = "line in invoice.InvoiceLine">
+          <th scope="row">{{line.ID}}</th>
+          <td v-if="itemPropExists('Name')">{{line.Item.Name}}</td>
+          <td v-if="itemPropExists('Description')">{{line.Item.Description}}</td>
+          <td v-if="propExists('PriceAmount')">{{line.PriceAmount}}</td>
+          <td v-if="propExists('InvoicedQuantity')">{{line.InvoicedQuantity}}</td>
+          <td v-if="propExists('TaxAmount')">{{line.TaxAmount}}</td>
+          <td>{{line.LineExtensionAmount}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <span class = "text-end" style = "font-size: 40px; font-weight: bold;">
+      <blockquote v-if="invoice.LegalMonetaryTotal.TaxExclusiveAmount">TOTAL (pre tax): {{invoice.LegalMonetaryTotal.TaxExclusiveAmount}}</blockquote>
+      <blockquote v-if="invoice.LegalMonetaryTotal.TaxInclusiveAmount">TOTAL (post tax): {{invoice.LegalMonetaryTotal.TaxInclusiveAmount}}</blockquote>
+      <blockquote v-if="invoice.LegalMonetaryTotal.PrepaidAmount">PAYED: {{invoice.LegalMonetaryTotal.PrepaidAmount}}</blockquote>
+      <blockquote>DUE: {{invoice.LegalMonetaryTotal.PayableAmount}}</blockquote>
+    </span>
+  </div>
+  <script>const App = new Vue({
+  el: '#app',
+  data: {
+    invoice: {"ID":1021,"IssueDate":"2024-03-14","DueDate":"2024-03-21","DocumentCurrencyCode":"VND","TaxTotal":10,"AccountingSupplierParty":{"EndpointID":51824753556,"Country":"AU","PartyLegalEntity":"ABC Inc.","PartyIdentification":51824753556,"PartyName":"ABC Inc.","StreetName":"123 Main Street","CityName":"Burwood","Telephone":123456789,"ElectronicMail":"abceemail@hotmail.com"},"AccountingCustomerParty":{"EndpointID":51824753556,"Country":"AU","PartyLegalEntity":"XYZ Corp.","PartyIdentification":51824753556,"PartyName":"XYZ Corp.","StreetName":"456 Oak Avenue","AdditionalStreetName":"Addtional Name","CityName":"Homebush","Telephone":"987-654-3210","ElectronicMail":"EMAIL"},"LegalMonetaryTotal":{"LineExtensionAmount":700,"TaxExclusiveAmount":100,"TaxInclusiveAmount":110,"PayableAmount":110,"PayableRoundingAmount":0},"InvoiceLine":[{"ID":1325,"InvoicedQuantity":500,"LineExtensionAmount":100,"Item":{"Name":"Product 1","TaxCategory":"S","TaxScheme":"GST","TaxPercent":50},"PriceAmount":0.2},{"ID":1326,"InvoicedQuantity":2,"LineExtensionAmount":600,"Item":{"Name":"Product 2","TaxCategory":"S","TaxScheme":"GST","TaxPercent":0},"PriceAmount":300}],"PaymentTerms":"As agreed","PaymentMeans":{"Code":1,"PaymentID":1021}}
+  },
+  methods: {
+    propExists: function (prop) {
+      return this.invoice.InvoiceLine.filter(line => line[prop]).length > 0;
+    },
+    itemPropExists: function (prop) {
+      return this.invoice.InvoiceLine.filter(line => line.Item[prop]).length > 0;
+    }
+  },
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>

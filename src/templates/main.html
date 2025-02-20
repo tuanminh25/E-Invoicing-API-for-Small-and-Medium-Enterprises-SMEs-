@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" data-foxclocks-statusbar-vertical-position="bottom" data-foxclocks-statusbar-priority="high"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/main.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/footer.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/nav.css') }}">
+        <!-- <script src="main.js"></script>  -->
+    </head>
+
+    <nav>
+        <ul class="navbar">
+            <li class="navlogo"><h1 class="gradient-text-animation"> FIVE GUYS </h1></li>
+            <li class="navbarli" onclick="window.location.href = '/logout';" ><h4 class="gradient-text-animation"> Logout </h4></li >
+            <li class="navbarli" onclick="window.location.href = '/';"><h4 class="gradient-text-animation"> Dashboard </h4></li>
+            <li class="navbarli" onclick="window.location.href = '/invoice/GUI';"><h4 class="gradient-text-animation"> Upload GUI </h4></li>
+            <li class="navbarli" onclick="window.location.href = '/invoice/CSV';"><h4 class="gradient-text-animation"> Upload CSV </h4></li>
+            <li class="navbarli" onclick="window.location.href = '/invoice/JSON';"><h4 class="gradient-text-animation"> Upload JSON </h4></li>
+            <li class="navbarli" onclick="window.location.href = '/invoice';"><h4 class="gradient-text-animation"> Update </h4></li>
+        </ul>
+    </nav>
+
+    <body>
+        <div class="container max-w-7xl pt-5 pb-12 mb-12">
+            <div class="gradient-line">
+            </div>
+            
+            
+            
+            <div class="row">
+                <div class="col">
+                        <defs>
+                            <lineargradient id="seven-gradient" gradientunits="userSpaceOnUse" x1="23.5345" y1="27.9014" x2="121.9345" y2="27.9014" gradienttransform="matrix(1 0 0 -1 0 55.8028)">
+                                <stop offset="0" style="stop-color: #f0ebab">
+                                <stop offset="0.4" style="stop-color: #f3b4ce">
+                                <stop offset="1" style="stop-color: #96cfca">
+                            </stop></stop></stop></lineargradient>
+                            <clippath id="clip-seven">
+                                <path d="M102.2345,2.9014v9.8h9.6v23.6l-65.3-33.3l-0.3-0.1h-22.7l32.4,16.3l66,33.7v-50H102.2345z">
+                            </path></clippath>
+                            <clippath id="clip-u">
+                                <path d="M52.3345,38.5014c0,2.2091-1.7909,4-4,4h-31.6c-2.2091,0-4-1.7909-4-4v-35.6h-9.8v35.6c0,7.7,6.2,13.9,13.8,13.9h31.6c7.6,0,13.8-6.2,13.8-13.9v-8.1l-9.8-5V38.5014z">
+                            </path></clippath>
+                        </defs>
+
+                        <g fill="rgba(255,255,255,0.08)">
+                            <path d="M102.2345,2.9014v9.8h9.6v23.6l-65.3-33.3l-0.3-0.1h-22.7l32.4,16.3l66,33.7v-50H102.2345z">
+                            <path d="M52.3345,38.5014c0,2.2091-1.7909,4-4,4h-31.6c-2.2091,0-4-1.7909-4-4v-35.6h-9.8v35.6c0,7.7,6.2,13.9,13.8,13.9h31.6c7.6,0,13.8-6.2,13.8-13.9v-8.1l-9.8-5V38.5014z">
+                        </path></path></g>
+
+                        <path clip-path="url(#clip-seven)" class="draw-path seven-path" stroke="url(#seven-gradient)" stroke-width="11" stroke-miterlimit="10" d="M102.0318,7.8102h14.9001v36.7666L25.5799-1.9312" pathlength="100">
+                        <path clip-path="url(#clip-u)" class="draw-path u-path" stroke="#fff" stroke-width="11" stroke-miterlimit="10" d="M7.8842,2.7939l0.0451,35.4694c0,5.0171,3.8335,9.0363,8.8506,9.0363h31.1442c5.0171,0,9.0843-4.0672,9.0843-9.0843V24.9046" pathlength="100">
+                        <path clip-path="url(#clip-seven)" class="draw-path seven-path" stroke="url(#seven-gradient)" stroke-width="11" stroke-miterlimit="10" d="M102.0318,7.8102h14.9001v36.7666L25.5799-1.9312" pathlength="100">
+                        <path clip-path="url(#clip-u)" class="draw-path u-path" stroke="#fff" stroke-width="11" stroke-miterlimit="10" d="M7.8842,2.7939l0.0451,35.4694c0,5.0171,3.8335,9.0363,8.8506,9.0363h31.1442c5.0171,0,9.0843-4.0672,9.0843-9.0843V24.9046" pathlength="100">
+                        <path clip-path="url(#clip-seven)" class="draw-path seven-path" stroke="url(#seven-gradient)" stroke-width="11" stroke-miterlimit="10" d="M102.0318,7.8102h14.9001v36.7666L25.5799-1.9312" pathlength="100">
+                        <path clip-path="url(#clip-u)" class="draw-path u-path" stroke="#fff" stroke-width="11" stroke-miterlimit="10" d="M7.8842,2.7939l0.0451,35.4694c0,5.0171,3.8335,9.0363,8.8506,9.0363h31.1442c5.0171,0,9.0843-4.0672,9.0843-9.0843V24.9046" pathlength="100">
+                    
+                </path></path></path></path></path></path></div>
+            </div>
+            
+            <div class="row g-4 mt-3">
+                <div class="col-lg-4">
+                    <div class="gradient-border-card">
+                        <div class="icon mb-3">
+                            <svg aria-labelledby="routes-icon-title" fill="none" height="30" role="img" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+                                <title id="routes-icon-title">An icon of a globe</title>
+                                <defs>
+                                    <linearGradient gradientUnits="userSpaceOnUse" id="icon-gradient-fill" x1="4" x2="40" y1="4" y2="24">
+                                        <stop stop-color="black" stop-opacity="0.2"></stop>
+                                        <stop offset="0" stop-color="black" stop-opacity="0.4"></stop>
+                                        <stop offset="0.5" stop-color="black"></stop>
+                                        <stop offset="0.75" stop-color="black" stop-opacity="0.4"></stop>
+                                        <stop offset="1" stop-color="black" stop-opacity="0"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M15 26.25C17.4937 26.2499 19.9168 25.4215 21.8888 23.895C23.8607 22.3685 25.2699 20.2304 25.895 17.8163M15 26.25C12.5063 26.2499 10.0832 25.4215 8.11121 23.895C6.13925 22.3685 4.73009 20.2304 4.105 17.8163M15 26.25C18.1062 26.25 20.625 21.2125 20.625 15C20.625 8.7875 18.1062 3.75 15 3.75M15 26.25C11.8937 26.25 9.375 21.2125 9.375 15C9.375 8.7875 11.8937 3.75 15 3.75M15 3.75C16.9953 3.74917 18.9549 4.2792 20.6777 5.28571C22.4006 6.29221 23.8246 7.73896 24.8037 9.4775M15 3.75C13.0047 3.74917 11.0451 4.2792 9.32226 5.28571C7.59942 6.29221 6.17538 7.73896 5.19625 9.4775M24.8037 9.4775C22.0821 11.8349 18.6007 13.1302 15 13.125C11.2525 13.125 7.825 11.75 5.19625 9.4775M24.8037 9.4775C25.7548 11.1625 26.2531 13.0651 26.25 15C26.25 15.9725 26.1262 16.9163 25.895 17.8163M25.895 17.8163C22.5615 19.6642 18.8115 20.631 15 20.625C11.0475 20.625 7.33375 19.6063 4.105 17.8163M4.105 17.8163C3.86843 16.8962 3.74915 15.95 3.75 15C3.75 12.9938 4.275 11.1088 5.19625 9.4775" stroke="url(#icon-gradient-fill)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                            </svg>
+                        </div>
+                        <h2 class="gradient-text-animation">Invoice Conversion API</h2>
+                        <p class="mt-3">Welcome! We're here to simplify 
+your invoice management process. If you have invoices stored in CSV 
+(Comma Separated Values) format or JSON (JavaScript Object Notation) 
+format, we've got you covered. Our system seamlessly converts these 
+formats into XML (eXtensible Markup Language), ensuring compatibility 
+and ease of integration with various systems.</p>
+                        <p class="mt-3">Once you've made your selection 
+and your invoices are transformed into XML, you can easily integrate 
+them into your workflow with minimal hassle.</p>
+                        <p class="mt-3">When you're finished, feel free to log out below to complete your session.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="gradient-border-card">
+                        <div class="icon mb-3">
+                            <svg aria-labelledby="observability-icon-title" fill="none" height="28" role="img" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                                <title id="observability-icon-title">An icon of a bar chart</title>
+                                <defs>
+                                    <linearGradient gradientUnits="userSpaceOnUse" id="icon-gradient-fill" x1="4" x2="40" y1="4" y2="24">
+                                        <stop stop-color="black" stop-opacity="0.2"></stop>
+                                        <stop offset="0" stop-color="black" stop-opacity="0.4"></stop>
+                                        <stop offset="0.5" stop-color="black"></stop>
+                                        <stop offset="0.75" stop-color="black" stop-opacity="0.4"></stop>
+                                        <stop offset="1" stop-color="black" stop-opacity="0"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M8 17V20M12 14V20M16 11V20M20 8V20M6 25H22C22.7957 25 23.5587 24.6839 24.1213 24.1213C24.6839 23.5587 25 22.7957 25 22V6C25 5.20435 24.6839 4.44129 24.1213 3.87868C23.5587 3.31607 22.7957 3 22 3H6C5.20435 3 4.44129 3.31607 3.87868 3.87868C3.31607 4.44129 3 5.20435 3 6V22C3 22.7957 3.31607 23.5587 3.87868 24.1213C4.44129 24.6839 5.20435 25 6 25Z" stroke="url(#icon-gradient-fill)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                            </svg>
+                        </div>
+                        <h2>Upload File</h2>
+                        <p class="mt-3">Upload a JSON/CSV file according to our format, and we will convert it to a UBL 2.0 XML invoice.</p>
+
+                        <button type="submit" class="mt-3" onclick="window.location.href = '/invoice/CSV';">
+                            <span>
+                                <span class="highlight-bg"></span>
+                                <span class="button-text">
+                                    Upload CSV
+                                </span>
+                            </span>
+                        </button>
+                        <button type="submit" class="mt-3" onclick="window.location.href = 'invoice/JSON';">
+                            <span>
+                                <span class="highlight-bg"></span>
+                                <span class="button-text">
+                                    Upload JSON
+                                </span>
+                            </span>
+                        </button>
+                        <button type="submit" class="mt-3" onclick="window.location.href = 'invoice/GUI';">
+                            <span>
+                                <span class="highlight-bg"></span>
+                                <span class="button-text">
+                                    Upload GUI
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4">
+                    <div class="gradient-border-card">
+                        <div class="icon mb-3">
+                            <svg aria-labelledby="middleware-icon-title" fill="none" height="28" role="img" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                                <title id="middleware-icon-title">An icon for Edge Middleware</title>
+                                <defs>
+                                    <linearGradient gradientUnits="userSpaceOnUse" id="icon-gradient-fill" x1="4" x2="40" y1="4" y2="24">
+                                        <stop stop-color="black" stop-opacity="0.2"></stop>
+                                        <stop offset="0" stop-color="black" stop-opacity="0.4"></stop>
+                                        <stop offset="0.5" stop-color="black"></stop>
+                                        <stop offset="0.75" stop-color="black" stop-opacity="0.4"></stop>
+                                        <stop offset="1" stop-color="black" stop-opacity="0"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M18.5 11.0001L18.5 17.0001M26 8.00012V20.0001M11.75 14.0001L2 20.0001L2 8.00012L11.75 14.0001Z" stroke="url(#icon-gradient-fill)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                            </svg>
+                        </div>
+                        <h2>View or update Invoices</h2>
+                        <p class="mt-3">View a list of all uploaded invoices, you can also edit all of these invoices.</p>
+
+                        <button type="submit" class="mt-3" onclick="window.location.href = '/invoice';">
+                            <span>
+                                <span class="highlight-bg"></span>
+                                <span class="button-text">
+                                    View or Update Invoices
+                                </span>
+                            </span>
+                        </button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    
+    
+                </body><footer class="site-footer">
+        <div class="container">
+        <div class="row">
+        <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">Welcome to our cutting-edge eInvoicing 
+platform, where efficiency meets simplicity. Streamlining your invoicing
+ process has never been easier. Say goodbye to paperwork and hello to 
+seamless transactions with our intuitive interface. Experience the 
+convenience of digitized invoicing and take control of your financial 
+transactions effortlessly. Join us on the forefront of digital finance 
+and unlock a world of efficiency today.</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+            <li><a href="">View invoice</a></li>
+            <br>
+            <li><a href="invoice/CSV"> Upload CSV </a></li>
+            <br>
+            <li><a href="invoice/JSON"> Upload JSON </a></li>
+            <br>
+            <li><a href="invoice/GUI"> Upload GUI </a></li>
+            <br>
+            <li><a href="/"> Main menu </a></li>
+            <br>
+            <li><a href="/logout"> Logout </a></li>
+        </ul>
+        </div>
+    </div>
+    <hr>
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright © 2023 All Rights Reserved by 
+    <a href="#">Fiveguys</a>.
+        </p>
+        </div>
+
+    </div>
+    </div>
+</footer>

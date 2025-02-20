@@ -1,0 +1,62 @@
+{
+    "invoiceinfo": {
+        "IssueDate": "14/03/2024",
+        "DueDate": "21/03/2024",
+        "InvoiceTypeCode": 380,
+        "DocumentCurrencyCode": "AUD",
+        "SupplierID": 51824753556,
+        "SupplierEndpointID": 51824753556,
+        "SupplierName": "ABC Company",
+        "SupplierStreetName": "123 Main Street",
+        "SupplierAdditionalStreetName": null,
+        "SupplierCityName": "Burwood",
+        "SupplierPostalZone": 12345,
+        "SupplierCountrySubentity": null,
+        "SupplierCountryCode": "AU",
+        "SupplierElectronicMail": "abceemail@hotmail.com",
+        "SupplierTelephone": "123456789",
+        "SupplierCompany": "ABC Inc.",
+        "PayeeID": 51824753556,
+        "PayeeEndpointID": 51824753556,
+        "PayeeName": "John Doe",
+        "PayeeStreetName": "456 Oak Avenue",
+        "PayeeAdditionalStreetName": "Addtional Name",
+        "PayeeCityName": "Homebush",
+        "PayeePostalZone": 45678,
+        "PayeeCountrySubentity": null,
+        "PayeeCountryCode": "AU",
+        "PayeeElectronicMail": "EMAIL",
+        "PayeeTelephone": "987-654-3210",
+        "PayeeCompany": "XYZ Corp.",
+        "LineExtensionAmount": 700.00,
+        "TaxAmount": 10.00,
+        "TaxableAmount": 100.00,
+        "TaxCategoryId": "S",
+        "TaxPercent": 10.00,
+        "TaxSchemeID": "GST",
+        "TaxExclusiveAmount": 100.00,
+        "TaxInclusiveAmount": 110.00,
+        "PayableRoundingAmount": 0.00,
+        "PayableAmount": 110.00
+    },
+    "products": [
+        {
+            "ItemName": "Product 1",
+            "InvoicedQuantity": -500,
+            "TaxAmount": 50.00,
+            "TaxSchemeID":"GST",
+            "ClassifiedTaxCategoryId":"S",
+            "PriceAmount": 0.2,
+            "LineExtensionAmount": 100.00
+        },
+        {
+            "ItemName": "Product 2",
+            "InvoicedQuantity": 2,
+            "TaxAmount": 0,
+            "TaxSchemeID":"GST",
+            "ClassifiedTaxCategoryId":"S",
+            "PriceAmount": 300.00,
+            "LineExtensionAmount": 600.00
+        }
+    ]
+}

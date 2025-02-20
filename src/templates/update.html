@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/main.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/footer.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/update.css') }}">
+
+    <title>Update Invoice</title>
+</head>
+<body>
+
+    <!-- <button class="back-button" onclick="window.location.href='/'">Back to Dashboard</button> -->
+    <button type="submit" class="mt-3" onclick="window.location.href = '/invoice';">
+        <span>
+            <span class="highlight-bg"></span>
+            <span class="button-text">
+                Back to list
+            </span>
+        </span>
+    </button>
+
+    <h1 class="gradient-text-animation">Update Invoice - ID: {{ invoice_info[1] }} </h1> 
+    <div class="content">
+    <h2>Invoice Information</h2>
+    <p>IssueDate: </p>
+        <input type="text" id="IssueDate" placeholder="{{ invoice_info[2] }}"> <button type="button" onclick="submitField('IssueDate', null, 'IssueDateSpan')">Submit</button> <span id="IssueDateSpan"></span> 
+    <p>DueDate: </p>
+        <input type="text" id="DueDate" placeholder="{{ invoice_info[3] }}"> <button type="button" onclick="submitField('DueDate', null, 'DueDateSpan')">Submit</button> <span id="DueDateSpan"></span>
+    <p>InvoiceTypeCode: </p>
+        <input type="text" id="InvoiceTypeCode" placeholder="{{ invoice_info[4] }}"> <button type="button" onclick="submitField('InvoiceTypeCode', null, 'InvoiceTypeCodeSpan')">Submit</button> <span id="InvoiceTypeCodeSpan"></span> 
+    <p>DocumentCurrencyCode: </p>
+        <input type="text" id="DocumentCurrencyCode" placeholder="{{ invoice_info[5] }}"> <button type="button" onclick="submitField('DocumentCurrencyCode', null, 'DocumentCurrencyCodeSpan')">Submit</button> <span id="DocumentCurrencyCodeSpan"></span>
+    <h4>Supplier Information</h4>
+    <p>SupplierID: </p>
+        <input type="text" id="SupplierID" placeholder="{{ invoice_info[6] }}"> <button type="button" onclick="submitField('SupplierID', null, 'SupplierIDSpan')">Submit</button> <span id="SupplierIDSpan"></span>
+    <p>SupplierEndpointID: </p>
+        <input type="text" id="SupplierEndpointID" placeholder="{{ invoice_info[7] }}"> <button type="button" onclick="submitField('SupplierEndpointID', null, 'SupplierEndpointIDSpan')">Submit</button> <span id="SupplierEndpointIDSpan"></span>   
+    <p>SupplierName: </p>
+        <input type="text" id="SupplierName" placeholder="{{ invoice_info[8] }}"> <button type="button" onclick="submitField('SupplierName', null, 'SupplierNameSpan')">Submit</button> <span id="SupplierNameSpan"></span> 
+    <p>SupplierStreetName: </p>
+        <input type="text" id="SupplierStreetName" placeholder="{{ invoice_info[9] }}"> <button type="button" onclick="submitField('SupplierStreetName', null, 'SupplierStreetNameSpan')">Submit</button> <span id="SupplierStreetNameSpan"></span>
+    <p>SupplierAdditionalStreetName: </p>
+        <input type="text" id="SupplierAdditionalStreetName" placeholder="{{ invoice_info[10] }}"> <button type="button" onclick="submitField('SupplierAdditionalStreetName', null, 'SupplierAdditionalStreetNameSpan')">Submit</button> <span id="SupplierAdditionalStreetNameSpan"></span>
+    <p>SupplierCityName: </p>
+        <input type="text" id="SupplierCityName" placeholder="{{ invoice_info[11] }}"> <button type="button" onclick="submitField('SupplierCityName', null, 'SupplierCityNameSpan')">Submit</button> <span id="SupplierCityNameSpan"></span>
+    <p>SupplierPostalZone: </p>
+        <input type="text" id="SupplierPostalZone" placeholder="{{ invoice_info[12] }}"> <button type="button" onclick="submitField('SupplierPostalZone', null, 'SupplierPostalZoneSpan')">Submit</button> <span id="SupplierPostalZoneSpan"></span>
+    <p>SupplierCountrySubentity: </p>
+        <input type="text" id="SupplierCountrySubentity" placeholder="{{ invoice_info[13] }}"> <button type="button" onclick="submitField('SupplierCountrySubentity', null, 'SupplierCountrySubentitySpan')">Submit</button> <span id="SupplierCountrySubentitySpan"></span>
+    <p>SupplierCountryCode: </p>
+        <input type="text" id="SupplierCountryCode" placeholder="{{ invoice_info[14] }}"> <button type="button" onclick="submitField('SupplierCountryCode', null, 'SupplierCountryCodeSpan')">Submit</button> <span id="SupplierCountryCodeSpan"></span>
+    <p>SupplierElectronicMail: </p>
+        <input type="text" id="SupplierElectronicMail" placeholder="{{ invoice_info[15] }}"> <button type="button" onclick="submitField('SupplierElectronicMail', null, 'SupplierElectronicMailSpan')">Submit</button> <span id="SupplierElectronicMailSpan"></span>
+    <p>SupplierTelephone: </p>
+        <input type="text" id="SupplierTelephone" placeholder="{{ invoice_info[16] }}"> <button type="button" onclick="submitField('SupplierTelephone', null, 'SupplierTelephoneSpan')">Submit</button> <span id="SupplierTelephoneSpan"></span>
+    <p>SupplierCompany: </p>
+        <input type="text" id="SupplierCompany" placeholder="{{ invoice_info[17] }}"> <button type="button" onclick="submitField('SupplierCompany', null, 'SupplierCompanySpan')">Submit</button> <span id="SupplierCompanySpan"></span>
+    <h4>Payee Information</h4>
+    <p>PayeeID: </p>
+        <input type="text" id="PayeeID" placeholder="{{ invoice_info[18] }}"> <button type="button" onclick="submitField('PayeeID', null, 'PayeeIDSpan')">Submit</button> <span id="PayeeIDSpan"></span>
+    <p>PayeeEndpointID: </p>
+        <input type="text" id="PayeeEndpointID" placeholder="{{ invoice_info[19] }}"> <button type="button" onclick="submitField('PayeeEndpointID', null, 'PayeeEndpointIDSpan')">Submit</button> <span id="PayeeEndpointIDSpan"></span>
+    <p>PayeeName: </p>
+        <input type="text" id="PayeeName" placeholder="{{ invoice_info[20] }}"> <button type="button" onclick="submitField('PayeeName', null, 'PayeeNameSpan')">Submit</button> <span id="PayeeNameSpan"></span> 
+    <p>PayeeStreetName: </p>
+        <input type="text" id="PayeeStreetName" placeholder="{{ invoice_info[21] }}"> <button type="button" onclick="submitField('PayeeStreetName', null, 'PayeeStreetNameSpan')">Submit</button> <span id="PayeeStreetNameSpan"></span>
+    <p>PayeeAdditionalStreetName: </p>
+        <input type="text" id="PayeeAdditionalStreetName" placeholder="{{ invoice_info[22] }}"> <button type="button" onclick="submitField('PayeeAdditionalStreetName', null, 'PayeeAdditionalStreetNameSpan')">Submit</button> <span id="PayeeAdditionalStreetNameSpan"></span>
+    <p>PayeeCityName: </p>
+        <input type="text" id="PayeeCityName" placeholder="{{ invoice_info[23] }}"> <button type="button" onclick="submitField('PayeeCityName', null, 'PayeeCityNameSpan')">Submit</button> <span id="PayeeCityNameSpan"></span>
+    <p>PayeePostalZone: </p>
+        <input type="text" id="PayeePostalZone" placeholder="{{ invoice_info[24] }}"> <button type="button" onclick="submitField('PayeePostalZone', null, 'PayeePostalZoneSpan')">Submit</button> <span id="PayeePostalZoneSpan"></span>
+    <p>PayeeCountrySubentity: </p>
+        <input type="text" id="PayeeCountrySubentity" placeholder="{{ invoice_info[25] }}"> <button type="button" onclick="submitField('PayeeCountrySubentity', null, 'PayeeCountrySubentitySpan')">Submit</button> <span id="PayeeCountrySubentitySpan"></span>
+    <p>PayeeCountryCode: </p>
+        <input type="text" id="PayeeCountryCode" placeholder="{{ invoice_info[26] }}"> <button type="button" onclick="submitField('PayeeCountryCode', null, 'PayeeCountryCodeSpan')">Submit</button> <span id="PayeeCountryCodeSpan"></span>
+    <p>PayeeElectronicMail: </p>
+        <input type="text" id="PayeeElectronicMail" placeholder="{{ invoice_info[27] }}"> <button type="button" onclick="submitField('PayeeElectronicMail', null, 'PayeeElectronicMailSpan')">Submit</button> <span id="PayeeElectronicMailSpan"></span>
+    <p>PayeeTelephone: </p>
+        <input type="text" id="PayeeTelephone" placeholder="{{ invoice_info[28] }}"> <button type="button" onclick="submitField('PayeeTelephone', null, 'PayeeTelephoneSpan')">Submit</button> <span id="PayeeTelephoneSpan"></span>
+    <p>PayeeCompany: </p>
+        <input type="text" id="PayeeCompany" placeholder="{{ invoice_info[29] }}"> <button type="button" onclick="submitField('PayeeCompany', null, 'PayeeCompanySpan')">Submit</button> <span id="PayeeCompanySpan"></span>
+    <h4>Payment Information</h4>
+    <p>LineExtensionAmount: </p>
+        <input type="text" id="LineExtensionAmount" placeholder="{{ invoice_info[30] }}"> <button type="button" onclick="submitField('LineExtensionAmount', null, 'LineExtensionAmountSpan')">Submit</button> <span id="LineExtensionAmountSpan"></span>
+    <p>TaxAmount: </p>
+        <input type="text" id="TaxAmount" placeholder="{{ invoice_info[31] }}"> <button type="button" onclick="submitField('TaxAmount', null, 'TaxAmountSpan')">Submit</button> <span id="TaxAmountSpan"></span>
+    <p>TaxableAmount: </p>
+        <input type="text" id="TaxableAmount" placeholder="{{ invoice_info[32] }}"> <button type="button" onclick="submitField('TaxableAmount', null, 'TaxableAmountSpan')">Submit</button> <span id="TaxableAmountSpan"></span>
+    <p>TaxCategoryId: </p>
+        <input type="text" id="TaxCategoryId" placeholder="{{ invoice_info[33] }}"> <button type="button" onclick="submitField('TaxCategoryId', null, 'TaxCategoryIdSpan')">Submit</button> <span id="TaxCategoryIdSpan"></span>
+    <p>TaxPercent: </p>
+        <input type="text" id="TaxPercent" placeholder="{{ invoice_info[34] }}"> <button type="button" onclick="submitField('TaxPercent', null, 'TaxPercentSpan')">Submit</button> <span id="TaxPercentSpan"></span>
+    <p>TaxSchemeID: </p>
+        <input type="text" id="TaxSchemeID" placeholder="{{ invoice_info[35] }}"> <button type="button" onclick="submitField('TaxSchemeID', null, 'TaxSchemeIDSpan')">Submit</button> <span id="TaxSchemeIDSpan"></span>
+    <p>TaxExclusiveAmount: </p>
+        <input type="text" id="TaxExclusiveAmount" placeholder="{{ invoice_info[36] }}"> <button type="button" onclick="submitField('TaxExclusiveAmount', null, 'TaxExclusiveAmountSpan')">Submit</button> <span id="TaxExclusiveAmountSpan"></span>
+    <p>TaxInclusiveAmount: </p>
+        <input type="text" id="TaxInclusiveAmount" placeholder="{{ invoice_info[37] }}"> <button type="button" onclick="submitField('TaxInclusiveAmount', null, 'TaxInclusiveAmountSpan')">Submit</button> <span id="TaxInclusiveAmountSpan"></span>
+    <p>PayableRoundingAmount: </p>
+        <input type="text" id="PayableRoundingAmount" placeholder="{{ invoice_info[38] }}"> <button type="button" onclick="submitField('PayableRoundingAmount', null, 'PayableRoundingAmountSpan')">Submit</button> <span id="PayableRoundingAmountSpan"></span>
+    <p>PayableAmount: </p>
+        <input type="text" id="PayableAmount" placeholder="{{ invoice_info[39] }}"> <button type="button" onclick="submitField('PayableAmount', null, 'PayableAmountSpan')">Submit</button> <span id="PayableAmountSpan"></span>
+
+    <br>
+    <h2>Product Information</h2>
+    {% for product in product_info %}
+    <h4>Product ID: {{ product[0] }}</h4>
+    <p>ItemName: </p>
+        <input type="text" id="ItemName" placeholder="{{ product[2] }}"> <button type="button" onclick="submitField('ItemName', '{{ product[0] }}', 'ItemNameSpan')">Submit</button> <span id="ItemNameSpan"></span>
+    <p>InvoicedQuantity: </p>
+        <input type="text" id="InvoicedQuantity" placeholder="{{ product[3] }}"> <button type="button" onclick="submitField('InvoicedQuantity', '{{ product[0] }}', 'InvoicedQuantitySpan')">Submit</button> <span id="InvoicedQuantitySpan"></span> 
+    <p>TaxAmount: </p>
+        <input type="text" id="ProductTaxAmount" placeholder="{{ product[4] }}"> <button type="button" onclick="submitField('ProductTaxAmount', '{{ product[0] }}', 'ProductTaxAmountSpan')">Submit</button> <span id="ProductTaxAmountSpan"></span>
+    <p>TaxSchemeID: </p>
+        <input type="text" id="ProductTaxSchemeID" placeholder="{{ product[5] }}"> <button type="button" onclick="submitField('ProductTaxSchemeID', '{{ product[0] }}', 'ProductTaxSchemeIDSpan')">Submit</button> <span id="ProductTaxSchemeIDSpan"></span>
+    <p>ClassifiedTaxCategoryId: </p>
+        <input type="text" id="ClassifiedTaxCategoryId" placeholder="{{ product[6] }}"> <button type="button" onclick="submitField('ClassifiedTaxCategoryId', '{{ product[0] }}', 'ClassifiedTaxCategoryIdSpan')">Submit</button> <span id="ClassifiedTaxCategoryIdSpan"></span>    
+    <p>PriceAmount: </p>
+        <input type="text" id="PriceAmount" name="PriceAmount" placeholder="{{ product[7] }}"> <button type="button" onclick="submitField('PriceAmount', '{{ product[0] }}', 'PriceAmountSpan')">Submit</button> <span id="PriceAmountSpan"></span>
+    <p>LineExtensionAmount: </p>
+        <input type="text" id="ProductLineExtensionAmount" placeholder="{{ product[8] }}"> <button type="button" onclick="submitField('ProductLineExtensionAmount', '{{ product[0] }}', 'ProductLineExtensionAmountSpan')">Submit</button> <span id="ProductLineExtensionAmountSpan"></span>
+    <br>
+    {% endfor %}
+    </div>
+
+    <script>
+        function submitField(fieldName, pid, spanID) {
+            var updatedValue = document.getElementById(fieldName).value;
+            var invoiceId = "{{ invoice_id }}"; // Get invoice ID from Flask variable
+            var url = '/update/invoice/' + invoiceId; // Update route URL
+
+            if (fieldName == 'ProductLineExtensionAmount') {fieldName = LineExtensionAmount;}
+            if (fieldName == 'ProductTaxAmount') {fieldName = TaxAmount;}
+            if (fieldName == 'ProductTaxSchemeID') {fieldName = TaxSchemeID;}
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    fieldName: fieldName,
+                    updatedValue: updatedValue,
+                    productId: pid
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    return response.json().then(data => {
+                        throw new Error(data.message);
+                    });
+                }
+            })
+            .then(data => {
+                document.getElementById(spanID).innerText = data.message;
+                setTimeout(() => {
+                    window.location.reload();
+                }, 700);
+            })
+            .catch(error => {
+                alert(error.message);
+            });
+        }
+    </script> 
+
+</body>
+
+
+</body>
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Welcome to our cutting-edge eInvoicing 
+                    platform, where efficiency meets simplicity. Streamlining your invoicing
+                    process has never been easier. Say goodbye to paperwork and hello to 
+                    seamless transactions with our intuitive interface. Experience the 
+                    convenience of digitized invoicing and take control of your financial 
+                    transactions effortlessly. Join us on the forefront of digital finance 
+                    and unlock a world of efficiency today.</p>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/invoice/{{ invoice_id }}">View invoice</a></li>
+                    <br>
+                    <li><a href="/invoice/CSV"> Upload CSV </a></li>
+                    <br>
+                    <li><a href="/invoice/JSON"> Upload JSON </a></li>
+                    <br>
+                    <li><a href="/invoice/GUI"> Upload GUI </a></li>
+                    <br>
+                    <li><a href="/"> Main menu </a></li>
+                    <br>
+                    <li><a href="/logout"> Logout </a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright © 2023 All Rights Reserved by 
+                    <a href="#">Fiveguys</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</html>

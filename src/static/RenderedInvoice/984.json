@@ -1,0 +1,68 @@
+{
+    "ID": 984,
+    "IssueDate": "2024-03-14",
+    "DueDate": "2024-03-21",
+    "DocumentCurrencyCode": "AUD",
+    "TaxTotal": 10,
+    "AccountingSupplierParty": {
+        "EndpointID": 51824753556,
+        "Country": "AU",
+        "PartyLegalEntity": "ABC Inc.",
+        "PartyIdentification": 51824753556,
+        "PartyName": "ABC Inc.",
+        "StreetName": "123 Main Street",
+        "CityName": "Burwood",
+        "Telephone": 123456789,
+        "ElectronicMail": "abceemail@hotmail.com"
+    },
+    "AccountingCustomerParty": {
+        "EndpointID": 51824753556,
+        "Country": "AU",
+        "PartyLegalEntity": "XYZ Corp.",
+        "PartyIdentification": 51824753556,
+        "PartyName": "XYZ Corp.",
+        "StreetName": "456 Oak Avenue",
+        "AdditionalStreetName": "Addtional Name",
+        "CityName": "Homebush",
+        "Telephone": "987-654-3210",
+        "ElectronicMail": "EMAIL"
+    },
+    "LegalMonetaryTotal": {
+        "LineExtensionAmount": 700,
+        "TaxExclusiveAmount": 100,
+        "TaxInclusiveAmount": 110,
+        "PayableAmount": 110,
+        "PayableRoundingAmount": 0
+    },
+    "InvoiceLine": [
+        {
+            "ID": 1294,
+            "InvoicedQuantity": 500,
+            "LineExtensionAmount": 100,
+            "Item": {
+                "Name": "Product 1",
+                "TaxCategory": "S",
+                "TaxScheme": "GST",
+                "TaxPercent": 50
+            },
+            "PriceAmount": 0.2
+        },
+        {
+            "ID": 1295,
+            "InvoicedQuantity": 2,
+            "LineExtensionAmount": 600,
+            "Item": {
+                "Name": "Product 2",
+                "TaxCategory": "S",
+                "TaxScheme": "GST",
+                "TaxPercent": 0
+            },
+            "PriceAmount": 300
+        }
+    ],
+    "PaymentTerms": "As agreed",
+    "PaymentMeans": {
+        "Code": 1,
+        "PaymentID": 984
+    }
+}

@@ -1,0 +1,322 @@
+swagger: "2.0"
+info:
+  title: Invoice Creation
+  description: |
+    API for invoice creation
+  version: 1.1.0
+ 
+schemes:
+  - http
+tags:
+  - name: MVP
+    description: MVP
+
+  - name: Medium Goal
+    description: Medium Goal
+
+  - name: Stretch Goal
+    description: Stretch Goal
+paths:
+  /invoice/CSV/:
+    post:
+      summary: Create an invoice
+      description: When given a CSV file of information, outputs 1 XML invoice which is stored locally in a dictionary.
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "CSVfile"
+        in: "formData"
+        description: "file to upload"
+        required: false
+        type: "file"
+      tags:
+        - MVP
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              invoiceId:
+                type: integer
+                format: int64
+                description: ID of the invoice
+            example:
+              invoiceId: 12345
+        400:
+          description: |
+            If any of the following are true:
+            * the file is not in required format
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: error message
+            example:
+              error: error
+  /clear/invoice/{invoice_id}:
+    delete:
+      summary: Delete an invoice
+      description: Delete an user's invoice with given id
+      parameters:
+      - name: "invoice_id"
+        in: "path"
+        description: "ID of invoice to delete"
+        required: true
+        type: "integer"
+      tags:
+        - MVP
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        400:
+          description: |
+            If any of the following are true:
+            * `invoice_id` does not exist
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: error message
+            example:
+              error: error
+  /invoice:
+    get:
+      summary: Get a list of invoices
+      tags:
+        - MVP
+      description:
+        hello
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              error:
+                type: integer
+                description: Id of invoice
+            example:
+              invoiceId: 12345
+  /invoice/{invoice_id}:
+    get:
+      summary: View an invoice
+      tags:
+        - MVP
+      description:
+        Get details of an invoice
+      parameters:
+      - name: "invoice_id"
+        in: "path"
+        description: "ID of invoice to view"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              invoiceId:
+                type: integer
+                description: Id of invoice
+              
+            example:
+              invoiceId: 12345
+              
+        400:
+          description: |
+            If any of the following are true:
+            * `invoice_id` does not exist
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: error message
+            example:
+              error: error
+    put:
+      summary: Update an invoice
+      tags:
+        - Medium Goal
+      description:
+        Update details of an invoice
+      parameters:
+      - name: "invoice_id"
+        in: "path"
+        description: "ID of invoice to view"
+        required: true
+        type: "integer"
+      - in: body
+        name: fieldToUpdate
+        description: "fieldToUpdate"
+        schema:
+          type: object
+          properties:
+            fieldToUpdate:
+              type: string
+              description: fieldToUpdate
+            newValute:
+              type: integer
+              description: integer
+
+      responses:
+          200:
+            description: OK
+            schema:
+              type: object
+              properties:
+                invoiceId:
+                  type: integer
+                  description: Id of invoice
+                
+              example:
+                invoiceId: 12345
+                
+          400:
+            description: |
+              If any of the following are true:
+              * invalid fieldToUpdate
+            schema:
+              type: object
+              properties:
+                error:
+                  type: string
+                  description: error message
+              example:
+                error: error
+  /invoice/JSON/:
+    post:
+      summary: Create an invoice
+      description: When given a CSV file of information, outputs 1 XML invoice which is stored locally in a dictionary.
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "Jsonfile"
+        in: "formData"
+        description: "file to upload"
+        required: false
+        type: "file"
+      tags:
+        - Medium Goal
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              invoiceId:
+                type: integer
+                format: int64
+                description: ID of the invoice
+            example:
+              invoiceId: 12345
+  /auth/register:
+    post:
+      summary: Register an user
+      description: register
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            email:
+              type: string
+              description: email
+            password:
+              type: string
+              description: password
+            fullname:
+              type: string
+              description: fullname
+      tags:
+        - Stretch Goal
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              userId:
+                type: integer
+                format: int64
+                description: ID of user
+            example:
+              userId: 1234
+        400:
+          description: |
+            If any of the following are true:
+            * email is not  valid
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: error message
+            example:
+              error: error
+  /auth/login:
+    post:
+      summary: Register an user
+      description: register
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            email:
+              type: string
+              description: email
+            password:
+              type: string
+              description: password
+      tags:
+        - Stretch Goal
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              userId:
+                type: integer
+                format: int64
+                description: ID of user
+            example:
+              userId: 12345
+        400:
+          description: |
+            If any of the following are true:
+            * incorrect email or password
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: error message
+            example:
+              error: error
+  /auth/logout:
+    post:
+      summary: Register an user
+      description: register
+      consumes:
+      - "multipart/form-data"
+      tags:
+        - Stretch Goal
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object

@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cec="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+  <cbc:CustomizationID>something</cbc:CustomizationID>
+  <cbc:ProfileID>something</cbc:ProfileID>
+  <cbc:ID>EBWASP1002</cbc:ID>
+  <cbc:IssueDate>2022-02-07</cbc:IssueDate>
+  <cbc:InvoiceTypeCode listAgencyID="6" listID="UNCL1001">380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode listAgencyID="6" listID="ISO4217">AUD</cbc:DocumentCurrencyCode>
+  <cbc:BuyerReference>EBWASP1002</cbc:BuyerReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:Id>EBWASP1002</cbc:Id>
+  </cac:AdditionalDocumentReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeAgencyID="ZZZ" schemeID="0151">80647710156</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:ParyName>80647710156</cbc:ParyName>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Suite 123 Level 45</cbc:StreetName>
+        <cbc:AdditionalStreetName>999 The Crescent</cbc:AdditionalStreetName>
+        <cbc:CityName>Homebush West</cbc:CityName>
+        <cbc:PostalZone>2140</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode listAgencyID="6" listID="ISO3166-1:Alpha2">AU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Awolako Enterprises Pty Ltd</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listAgencyID="6" listID="UNCL4461">1</cbc:PaymentMeansCode>
+    <cbc:PaymentID>1</cbc:PaymentID>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>As agreed</cbc:Note>
+  </cac:PaymentTerms>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="AUD">10.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxablAmount currencyID="AUD">100.00</cbc:TaxablAmount>
+      <cbc:TaxAmount currencyID="AUD">10.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+        <cbc:Percent>10.0</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">GST</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="AUD">100.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="AUD">100.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="AUD">110.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableRoundingAmount currencyID="AUD">0.00</cbc:PayableRoundingAmount>
+    <cbc:PayableAmount currencyID="AUD">110.0</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+</Invoice>

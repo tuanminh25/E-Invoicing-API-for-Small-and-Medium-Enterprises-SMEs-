@@ -1,0 +1,10 @@
+// COPY THIS FORMAT AND CHANGE ACCORDINGLY,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+// Replace 'NULL' or '0' with respective info,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+IssueDate,DueDate,InvoiceTypeCode,DocumentCurrencyCode,SupplierID,SupplierEndpointID,SupplierName,SupplierStreetName,SupplierAdditionalStreetName,SupplierCityName,SupplierPostalZone,SupplierCountrySubentity,SupplierCountryCode,SupplierElectronicMail,SupplierTelephone,SupplierCompany,PayeeID,PayeeEndpointID,PayeeName,PayeeStreetName,PayeeAdditionalStreetName,PayeeCityName,PayeePostalZone,PayeeCountrySubentity,PayeeCountryCode,PayeeElectronicMail,PayeeTelephone,PayeeCompany,LineExtensionAmount,TaxAmount,TaxableAmount,TaxCategoryId,TaxPercent,TaxSchemeID,TaxExclusiveAmount,TaxInclusiveAmount,PayableRoundingAmount,PayableAmount
+11/03/2024,26/04/2023,380,AUD,51824753556,51824753556,Michigan,100 Business Street,NULL,Dulwich Hill,2203,NULL,AU,supplier email,supplier telephone,Ebusiness Software Services Pty Ltd,51824753556,51824753556,G13,Suite 123 Level 45,999 The Crescent,Homebush West,2140,NULL,AU,customer email,customer telephone,Awolako Enterprises Pty Ltd,100,10,100,S,11,GST,100,110,0,120
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+// Write expenditure here with new instances on a new line,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+ItemName,InvoicedQuantity,TaxAmount,TaxSchemeID,ClassifiedTaxCategoryId,PriceAmount,LineExtensionAmount,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MELANDER-Leg,1,0,GST,S,75000,75000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MELANDER-Head,1,0,GST,S,100000,100000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

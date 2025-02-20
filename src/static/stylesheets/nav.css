@@ -1,0 +1,44 @@
+.navbar {
+	list-style-type: none;
+	margin-left: 0px;
+	padding: 0;
+	overflow: hidden;
+}
+
+.navlogo {
+    float: left;
+    padding-right: 0vw;
+}
+
+.navbarli {
+	float: right;
+    padding-left: 2vw;
+}
+
+
+.gradient-text-animation {
+	--colorA: #D6009A;
+	--colorB: #9750dd;
+	cursor: default;
+	position: relative;
+	background-image: linear-gradient(120deg, var(--colorA) 0%, var(--colorB) 50%, var(--colorA) 100%);
+	background-origin: padding-box;
+	background-size: 200%;
+	-webkit-box-decoration-break: clone;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: unset;
+	animation-timeline: auto;
+	animation-range-start: normal;
+	animation-range-end: normal;
+	overflow: visible;
+	animation: 3s linear 0s infinite normal forwards running nextui-k-dAFEPd;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('https://res.cloudinary.com/du6mfjbbd/raw/upload/v1696975586/wegxkv6mdriebvpvokwf.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
